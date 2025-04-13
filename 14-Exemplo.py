@@ -25,7 +25,7 @@ label_num2.grid(row=1, column=0, padx=10, pady=5, sticky="e")
 entry_num2 = tk.Entry(window)
 entry_num2.grid(row=1, column=1, padx=10, pady=5)
 
-button_sum = tk.Button(window, text="Sum", command=sum_number())
+button_sum = tk.Button(window, text="Sum", command=sum_number)
 button_sum.grid(row=2, columnspan=2, padx=10, pady=5)
 
 #Running a Loop Main-------------------------------------------------------------------
