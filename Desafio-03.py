@@ -1,4 +1,4 @@
-#01-----------------------------------------
+#01----------------------------------------------------------------------------------------
 def my_function(msg):
     print(msg)
 
@@ -23,7 +23,7 @@ n = 2
 resultado = 10 / n
 minha_funcao(resultado)
 
-#02---------------------------------------
+#02-------------------------------------------------------------------------------------------------
 import tkinter as tk
 from tkinter import messagebox
 
@@ -40,11 +40,11 @@ def comp_numbers():
     except ValueError:
             messagebox.showerror("Error", "Please, Enter Valid Numbers!")
 
-# Create The Window
+# Create The Window----------------------------------------------------
 window = tk.Tk()
 window.title("Comparing Numbers")
 
-# Create The Widget
+# Create The Widget-----------------------------------------------------
 label_num1 = tk.Label(window, text = "Number 1:")
 label_num1.grid(row = 0, column = 0, padx = 10, pady = 5, sticky = "e")
 
@@ -60,5 +60,25 @@ entry_num2.grid(row = 1, column = 1, padx = 10, pady = 5)
 button_comp = tk.Button(window, text="Compare", command = comp_numbers)
 button_comp.grid(row = 2, columnspan = 2, padx = 10, pady = 5)
 
-# Running The Loop Main
+# Running The Loop Main-------------------------------------------------
+window.mainloop()
+
+#03-------------------------------------------------------------------------------------------------------
+def capture_click(event):
+    x = event.x
+    y = event.y
+    label_coodinates["text"] = f'Last Click: X={x}, Y={y}'
+
+#The Window Create
+window = tk.Tk()
+window.title("Treatment of Events - Left Click Capture!")
+
+#Create The Widget of Label
+label_coodinates = tk.Label(window, text = "Click in any Place the Window!")
+label_coodinates.pack(padx = 200, pady = 100)
+
+#Binding mouse movement event to function
+window.bind("<Button-3>", capture_click)
+
+#Runnig the Main Loop
 window.mainloop()
